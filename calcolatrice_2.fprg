@@ -4,9 +4,9 @@
         <attribute name="name" value="calcolatrice"/>
         <attribute name="authors" value="waffl"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2024-10-24 05:25:57 "/>
+        <attribute name="saved" value="2024-10-24 05:40:58 "/>
         <attribute name="created" value="d2FmZmw7TEVMRTsyMDI0LTEwLTI0OyIwNDoxMzo1MCAiOzIwMDE="/>
-        <attribute name="edited" value="d2FmZmw7TEVMRTsyMDI0LTEwLTI0OyIwNToyNTo1NyAiOzM7MjEyMg=="/>
+        <attribute name="edited" value="d2FmZmw7TEVMRTsyMDI0LTEwLTI0OyIwNTo0MDo1OCAiOzQ7MjEyMQ=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -41,8 +41,15 @@
                                 <else>
                                     <if expression="operazione= &quot;/&quot; || operazione= &quot;divisione&quot;">
                                         <then>
-                                            <assign variable="risultato" expression="x/y"/>
-                                            <output expression="risultato" newline="True"/>
+                                            <if expression="y == 0">
+                                                <then>
+                                                    <output expression="&quot;Un numero non &#232; divisibile per zero&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <assign variable="risultato" expression="x/y"/>
+                                                    <output expression="risultato" newline="True"/>
+                                                </else>
+                                            </if>
                                         </then>
                                         <else>
                                             <output expression="&quot;L'operazione che hai fornito non &#232; valida&quot;" newline="True"/>
